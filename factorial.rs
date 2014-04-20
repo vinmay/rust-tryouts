@@ -6,6 +6,7 @@ use std::io::BufferedReader;
     	let mut i = 1;
     	let mut f = 1;    	
     	let mut mynum = 0;
+    	let mut nonum = true;
         println("Enter a number:");
         let mut reader = BufferedReader::new(io::stdin());
         let input = reader.read_line().unwrap();
@@ -15,12 +16,15 @@ use std::io::BufferedReader;
                 Some(number) => {
                     mynum = number
                 }
-                None         => println("Hey, put in a number.")
+                None         => { println("Hey, put in a number."); nonum = false; }
             }
         while i <= mynum {
         	f = f * i;
         	i += 1;
         }
-        println("Factorial is:");
-        println(f.to_str());
+
+        if nonum == true {
+	        println("Factorial is:");
+	        println(f.to_str());
+	    }
     }
