@@ -24,7 +24,7 @@ use std::io::BufferedReader;
         }
 
         if nonum == true {
-	        println("Factorial is:");
+	        println!("Factorial of {:d} is:",mynum);
 	        println(f.to_str());
 	    }
     }
